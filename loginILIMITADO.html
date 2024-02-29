@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Captura</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://i.ibb.co/HPKHK8X/C-pia-de-EXTRACTOR-2.png') center/cover fixed no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative; /* Para posicionar o botão flutuante */
+        }
+
+        #loginPage, #mainPage {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        /* Estilos para o botão flutuante */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite; /* Animação de pulso */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Botão flutuante para solicitar a senha -->
+<button class="floating-button" onclick="solicitarSenha()">Solicite a Sua Senha</button>
+
+<!-- Página de Login -->
+<div id="loginPage">
+    <h1>ExtratorLeads</h1>
+    <form id="loginForm">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" required value=""><br>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" required value=""><br>
+
+        <button type="button" onclick="realizarLogin()">Login</button>
+    </form>
+</div>
+
+<!-- Página Principal -->
+<div id="mainPage" style="display: none;">
+    <h1>ExtratorLeads</h1>
+    <button onclick="executarScript()">Executar Script</button>
+</div>
+
+<script>
+    function realizarLogin() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Verifica as credenciais (substitua isso com sua lógica real)
+        if (username === 'Teste' && password === '@pass369963') {
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        } else {
+            alert('Login inválido. Tente novamente.');
+        }
+    }
+
+    function executarScript() {
+        alert("Script executado com sucesso!");
+        // Aqui você pode adicionar o código JavaScript que deseja executar após o login
+    }
+
+    function solicitarSenha() {
+        // Redirecionar o usuário para o WhatsApp
+        window.location.href = 'https://t.me/+V_jLYD98rtgxNjIx'; // Substitua SEU_NUMERO pelo seu número do WhatsApp
+    }
+</script>
+
+</body>
+</html>
